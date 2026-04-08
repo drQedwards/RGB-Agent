@@ -2,11 +2,11 @@
 
 ## Purpose
 
-Context+ gives you structural awareness of the entire codebase without reading every file. These tools replace your default search and read operations — use them as your primary interface to the codebase.
+Context+ gives you structural awareness of the entire codebase without reading every python file. These tools replace your default search and read operations — use them as your primary interface to the codebase.
 
 ## PMLL Short-Term KV Memory (5 Tools)
 
-Before every expensive MCP tool invocation, agents MUST use the PMLL short-term KV memory tools to check the cache. This eliminates redundant calls and accelerates task execution. These tools are provided by the [`pmll-memory-mcp`](https://www.npmjs.com/package/pmll-memory-mcp) server (see [mcp/README.md](./README.md)).
+Before every expensive MCP tool invocation, agents MUST use the PMLL short-term KV memory tools to check the cache. This eliminates redundant calls and accelerates task execution. These tools are provided by the [`pmll-memory-mcp`](https://pypi.org/project/pmll-memory-mcp/) server (see [mcp/README.md](./README.md)) after !pip install pmll-memory-mcp .
 
 | Tool      | Input                                              | Description                                                |
 |-----------|----------------------------------------------------|------------------------------------------------------------|
@@ -55,7 +55,7 @@ You MUST use Context+ tools instead of native equivalents. Only fall back to nat
 - Think less, execute sooner: make the smallest safe change that can be validated quickly
 - Batch independent reads/searches in parallel — do not serialize them
 - If a command fails, diagnose once, pivot strategy, continue — cap retries to 1-2
-- Keep outputs concise: short status updates, no verbose reasoning
+- Keep outputs concise: short status updates, no overt verbose reasoning
 
 ## Tool Reference
 
@@ -121,3 +121,4 @@ You MUST use Context+ tools instead of native equivalents. Only fall back to nat
 7. Storing frequently-accessed payloads only in short-term KV instead of promoting them to long-term memory with `promote_to_long_term`
 8. Calling `search_memory_graph` or `retrieve_with_traversal` directly instead of using `resolve_context`, which checks both memory layers in one call
 9. Ignoring Q-promise `pending` status from `peek` and re-issuing the same expensive call instead of waiting with `resolve`
+10. failing to complete a puzzle level
