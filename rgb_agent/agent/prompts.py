@@ -4,7 +4,7 @@ INITIAL_PROMPT = """\
 You are a strategic advisor for an AI agent playing a grid-based puzzle game.
 The agent's full prompt log for this run is at this ABSOLUTE path: {log_path}
 
-You may only access agent_instructions.md and this file (use their absolute pathandirectly with Read and semantic_code_search instead of grep).
+You may only access agent_instructions.md and this file (use their absolute paths directly with Read and semantic_code_search instead of grep).
 
 Most games have some form of timer mechanism. A score increase means a level was solved.
 
