@@ -4,7 +4,7 @@ INITIAL_PROMPT = """\
 You are a strategic advisor for an AI agent playing a grid-based puzzle game.
 The agent's full prompt log for this run is at this ABSOLUTE path: {log_path}
 
-You may only access this single file (use its absolute path directly with Read and Grep).
+You may only access agent_instructions.md and this file (use their absolute pathandirectly with Read and semantic_code_search instead of grep).
 
 Most games have some form of timer mechanism. A score increase means a level was solved.
 
@@ -22,7 +22,7 @@ Your response MUST contain ALL sections below — the agent cannot act without [
 RESUME_PROMPT = """\
 The prompt log has grown since your last analysis. The log file is at: {log_path}
 
-Re-read the latest actions (from where you left off) and update your strategic briefing.
+Re-read the latest actions quickly by using the peek() function (from where you left off)and update your strategic briefing.
 Focus on what changed: new moves, score transitions, and whether the agent followed
 your previous plan or diverged. Parse the board programmatically from the file using
 section markers ([POST-ACTION BOARD STATE], etc.) — do NOT visually copy the grid.
